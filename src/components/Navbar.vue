@@ -56,7 +56,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-family: 'Rubik', sans-serif;
-  box-shadow: 0px 2px 2px gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  touch-action: none;
 }
 
 .home {
@@ -96,11 +101,12 @@ nav {
 .dropmenu {
   display: flex;
   width: 100%;
-  position: absolute;
-  z-index: 101;
+  position: fixed;
+  z-index: 2;
   flex-direction: column;
   touch-action: none;
   background-color: #4d2986;
+  top: 56px;
 }
 
 .dropbutton {
@@ -125,10 +131,10 @@ nav {
 }
 
 .shade {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
   opacity: 0.5;
   background-color: black;
   touch-action: none;

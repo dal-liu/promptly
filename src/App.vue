@@ -29,6 +29,7 @@ import { RouterView } from 'vue-router'
 main {
   padding-bottom: 100px;
   will-change: opacity, transform;
+  margin-top: 56px;
 }
 
 footer {
@@ -56,5 +57,11 @@ footer {
 .fade-enter-active,
 .fade-leave-active {
   transition: 0.3s opacity ease-out;
+}
+
+@media (min-width: 480px) {
+  main {
+    margin-top: 60px;
+  }
 }
 </style>

@@ -15,10 +15,10 @@ h1 {
 }
 
 .button {
-  width: 200px;
-  height: 60px;
-  border-radius: 30px;
-  font-size: 27px;
+  width: 192px;
+  height: 56px;
+  border-radius: 28px;
+  font-size: 28px;
   font-family: 'Rubik', sans-serif;
   background-color: #4d2986;
   color: white;
