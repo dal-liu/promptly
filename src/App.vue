@@ -19,7 +19,9 @@ import { RouterView } from 'vue-router'
   </main>
 
   <footer>
-    Copyright &copy; 2023 Daniel Liu, AJ Liss, Angela Guan, George Moseley
+    <div class="copyright">
+      Copyright &copy; 2023 Daniel Liu, AJ Liss, Angela Guan, George Moseley
+    </div>
   </footer>
 </template>
 
@@ -34,11 +36,16 @@ footer {
   color: #737373;
   height: 100px;
   width: 100%;
-  font-family: 'Rubik', sans-serif;
-  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.copyright {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  padding: 25px;
+  text-align: center;
 }
 
 .fade-enter-from,

@@ -1,50 +1,47 @@
-<script setup>
-import Button from '../components/Button.vue'
-import { RouterLink } from 'vue-router'
-</script>
-
 <template>
     <h1>Find the perfect prompting app for your needs</h1>
-    <div id="startbutton">
-      <!-- <RouterLink to="/appfinder" v-slot="{ navigate }">
-        <Button text="Let's go!" :onClick="navigate" />
-      </RouterLink> -->
-      <a href="https://idc8nflfnud.typeform.com/to/HmgFptlu" target="_blank" class="button">Let's go!</a>
-    </div>
+    <a href="https://idc8nflfnud.typeform.com/to/HmgFptlu" target="_blank">
+      <div class="button">Let's go!</div>
+    </a>
 </template>
 
 <style scoped>
 h1 {
   text-align: center;
-  font-size: 48px;
+  font-size: 36px;
   font-family: 'Rubik', sans-serif;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 14%;
+  width: 80%;
+  margin: 40% auto 0px;
 }
 
 .button {
-  padding: 10px 40px;
+  width: 200px;
+  height: 60px;
   border-radius: 30px;
-  font-size: 30px;
+  font-size: 27px;
   font-family: 'Rubik', sans-serif;
-  border-style: hidden;
   background-color: #4d2986;
   color: white;
   cursor: pointer;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:hover {
   background-color: #432475;
 }
 
-#startbutton {
-  display: flex;
-  width: 200px;
-  height: 60px;
-  margin: auto;
-  padding-top: 30px;
-  justify-content: center;
+@media (min-width: 480px) {
+  h1 {
+    font-size: 48px;
+    width: 50%;
+    margin: 20% auto 0;
+  }
+
+  .button {
+    font-size: 30px;
+  }
 }
 </style>
