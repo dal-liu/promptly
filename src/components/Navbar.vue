@@ -11,15 +11,16 @@ const clickMenu = () => menuClicked.value = !menuClicked.value
     <p class="home">Promptly</p>
     <div class="navlinks">
       <RouterLink to="/" v-slot="{ navigate }">
-        <button @click="navigate">Home</button>
+        <button @click="navigate" class="navbutton">Home</button>
       </RouterLink>
       <a href="https://idc8nflfnud.typeform.com/to/HmgFptlu" target="_blank">
-        <div class="button">App Finder</div>
+        <div class="navbutton" id="a">App Finder</div>
       </a>
       <RouterLink to="/database" v-slot="{ navigate }">
-        <button @click="navigate">Database</button>
+        <button @click="navigate" class="navbutton">Database</button>
       </RouterLink>
     </div>
+
     <div class="hamburger" @click="clickMenu" v-if="!menuClicked">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -27,8 +28,24 @@ const clickMenu = () => menuClicked.value = !menuClicked.value
     </div>
     <div class="close" @click="clickMenu" v-if="menuClicked">&#10005;</div>
   </nav>
-  
-  <div class="shade" v-if="menuClicked" @click="clickMenu"></div>
+
+  <Transition name="slide" mode="default">
+    <div class="dropmenu" v-if="menuClicked" @click="clickMenu">
+      <RouterLink to="/" v-slot="{ navigate }">
+        <button @click="navigate" class="dropbutton">Home</button>
+      </RouterLink>
+      <a href="https://idc8nflfnud.typeform.com/to/HmgFptlu" target="_blank">
+        <div class="dropbutton" id="a">App Finder</div>
+      </a>
+      <RouterLink to="/database" v-slot="{ navigate }">
+        <button @click="navigate" class="dropbutton">Database</button>
+      </RouterLink>
+    </div>
+  </Transition>
+
+  <Transition name="fade" mode="default">
+    <div class="shade" v-if="menuClicked" @click="clickMenu"></div>
+  </Transition>
 </template>
 
 <style scoped>
@@ -60,7 +77,7 @@ nav {
 
 .close {
   cursor: pointer;
-  margin-right: 16px;
+  margin-right: 15px;
   color: white;
   font-size: 28px;
   font-family: 'Rubik', sans-serif;
@@ -76,11 +93,65 @@ nav {
   border-radius: 2px;
 }
 
+.dropmenu {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 101;
+  flex-direction: column;
+  touch-action: none;
+  background-color: #4d2986;
+}
+
+.dropbutton {
+  height: 56px;
+  width: 100%;
+  background-color: #4d2986;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+.dropbutton:hover {
+  background: #59309c;
+}
+
+#a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .shade {
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
+  opacity: 0.5;
+  background-color: black;
+  touch-action: none;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: 0.2s opacity ease;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateY(-224px);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.4s;
 }
 
 @media (min-width: 480px) {
@@ -94,8 +165,7 @@ nav {
     font-size: 30px;
   }
 
-  button,
-  .button {
+  .navbutton {
     height: 64px;
     width: 100px;
     background: #4d2986;
@@ -106,14 +176,7 @@ nav {
     font-size: 18px;
   }
 
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  button:hover,
-  .button:hover {
+  .navbutton:hover {
     background: #59309c;
   }
 
@@ -122,7 +185,10 @@ nav {
     display: flex;
   }
 
-  .hamburger {
+  .hamburger,
+  .close,
+  .dropmenu,
+  .shade {
     display: none;
   }
 }
