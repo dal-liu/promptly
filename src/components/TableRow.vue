@@ -1,51 +1,16 @@
 <script setup>
 defineProps({
-  name: String,
-  details: String,
-  link: String,
-  rating: String
+  row: Array
 })
 </script>
 
 <template>
-  <div class="row">
-    <div id="name">{{ name }}</div>
-    <div id="details">{{ details }}</div>
-    <div id="link">
-      <a :href="link" target="_blank">Link</a>
-    </div>
-    <div id="rating">{{ rating }}</div>
-  </div>
+  <tr>
+    <td class="name">{{ row[0] }}</td>
+    <td class="details">{{ row[1] }}</td>
+    <td class="link">
+      <a :href="row[2]" target="_blank">Click here</a>
+    </td>
+    <td class="rating">{{ row[3] }}</td>
+  </tr>
 </template>
-
-<style scoped>
-.row {
-  display: flex;
-  border-bottom: 1.5px solid #e6e6e6;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'Rubik', sans-serif;
-}
-
-#name {
-  padding-right: 10px;
-  width: 200px;
-}
-
-#details {
-  padding-right: 10px;
-  width: 550px;
-}
-
-#link {
-  padding-right: 10px;
-  width: 300px;
-}
-
-#rating {
-  width: 150px;
-}
-</style>

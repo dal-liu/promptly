@@ -4,11 +4,11 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <nav>
-    <RouterLink class="home" to="/">Promptly</RouterLink>
+  <RouterLink class="home" to="/">Promptly</RouterLink>
     <div class="links">
       <!-- <RouterLink to="/appfinder" v-slot="{ navigate }">
-        <button @click="navigate">App Finder</button>
-      </RouterLink> -->
+              <button @click="navigate">App Finder</button>
+            </RouterLink> -->
       <a href="https://idc8nflfnud.typeform.com/to/HmgFptlu" target="_blank" class="button">App Finder</a>
       <RouterLink to="/database" v-slot="{ navigate }">
         <button @click="navigate">Database</button>
@@ -19,46 +19,61 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 nav {
-  height: 64px;
   background: #4d2986;
+  height: 56px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
   font-family: 'Rubik', sans-serif;
   box-shadow: 0px 2px 2px gray;
 }
 
-button {
-  height: 64px;
-  width: 120px;
-  background: #4d2986;
-  color: white;
-  border: 0px;
-  cursor: pointer;
-  font-family: 'Rubik', sans-serif;
-  font-size: 18px;
-}
-
-.button {
-  padding: 21px 21px;
-  color: white;
-  font-family: 'Rubik', sans-serif;
-  font-size: 18px;
-}
-
-button:hover, .button:hover {
-  background: #59309c;
-}
-
 .home {
-  font-size: 30px;
+  font-size: 24px;
   color: white;
-  padding-left: 30px;
+  padding-left: 15px;
   font-weight: bold;
 }
 
-.links {
-  padding-right: 15px;
+@media (min-width: 480px) {
+  nav {
+    height: 64px;
+    gap: 20px;
+  }
+
+  button {
+    height: 64px;
+    width: 120px;
+  }
+
+  .home {
+    padding-left: 30px;
+    font-size: 30px;
+  }
+
+  button:hover,
+  .button:hover {
+    background: #59309c;
+  }
+
+  .links {
+    padding-right: 15px;
+  }
+
+  button {
+    background: #4d2986;
+    color: white;
+    border: 0px;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+  }
+
+  .button {
+    padding: 21px 21px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+  }
 }
 </style>
