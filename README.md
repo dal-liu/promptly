@@ -1,29 +1,11 @@
-# prompter-finder
+# Promptly
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a website that helps caretakers of people with intellectual disabilities (IDD) find an app that can prompt them to do daily tasks.
 
-## Recommended IDE Setup
+### Navigating to the quiz
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+On the home page, clicking the large button at the center of the screen will take the user to the quiz. Alternatively, one can also click on the "App Finder" tab in the navbar.
 
-## Customize configuration
+### Navigating to the app database
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+In the navbar, clicking on the "Database" tab will take one to the app table.
